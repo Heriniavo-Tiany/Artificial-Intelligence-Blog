@@ -24,7 +24,8 @@ CREATE TABLE Articles (
                           author VARCHAR(255) NOT NULL,
                           category_id INTEGER REFERENCES Categories(id),
                           created_at TIMESTAMP DEFAULT NOW(),
-                          updated_at TIMESTAMP DEFAULT NOW()
+                          updated_at TIMESTAMP DEFAULT NOW(),
+                          thumbnail varchar
 );
 
 -- Create the Comments table
