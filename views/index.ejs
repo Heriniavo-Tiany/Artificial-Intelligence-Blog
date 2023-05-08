@@ -1,19 +1,19 @@
 <% include header %>
 
-
 <section class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
-                    <% for (let article of articles) { %>
+                    <%
+                    for (let article of articles) { %>
                         <div class="col-lg-3 col-md-6">
                             <article class="post-grid mb-5">
-                                <a class="post-thumb mb-4 d-block" href="/blogs/<%= article.id %>">
+                                <a class="post-thumb mb-4 d-block" href="/blogs/<%= article.id %>/<%= article.slug %>">
                                     <img src="<%= article.thumbnail %>" alt="" class="img-fluid w-100">
                                 </a>
                                 <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1">Explore</span>
-                                <h3 class="post-title mt-1"><a href="/blogs/<%= article.id %>"><%= article.title %></a></h3>
+                                <h3 class="post-title mt-1"><a href="/blogs/<%= article.id %>/<%= article.slug %>"><%= article.title %></a></h3>
 
                                 <span class="text-muted letter-spacing text-uppercase font-sm">June 15, 2019</span>
 
