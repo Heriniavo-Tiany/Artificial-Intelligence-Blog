@@ -26,7 +26,7 @@ client.connect();
 app.use((req, res, next) => {
   req.db = client;
   next();
-}); 
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
