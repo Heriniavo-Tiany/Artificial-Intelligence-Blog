@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
     }));
 
     res.render('index', {
-      title: 'Intelligence Artificielle - Accueil',
+      title: 'Accueil - Brain Data',
       articles,
       slugify,
     });

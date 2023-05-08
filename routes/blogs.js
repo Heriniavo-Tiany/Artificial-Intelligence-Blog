@@ -12,7 +12,7 @@ router.get('/:id/:slug', function(req, res, next) {
       return next(err);
     }
 
-    res.render('blog', { title: 'Intelligence Artificielle - Blog', article: result.rows[0] });
+    res.render('blog', { title: 'Blog - Brain Data', article: result.rows[0] });
   });
 });
 
