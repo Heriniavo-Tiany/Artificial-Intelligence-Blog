@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="project" />
+    <orderEntry type="module" module-name="IA blog - Back Office" />
   </component>
 </module>
