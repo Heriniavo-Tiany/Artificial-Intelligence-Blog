@@ -11,7 +11,7 @@ CREATE TABLE Users (
                        username VARCHAR(255) NOT NULL,
                        email VARCHAR(255) NOT NULL,
                        password VARCHAR(255) NOT NULL,
-                       role int NOT NULL DEFAULT 1,
+                       role CHAR(1) NOT NULL DEFAULT 1,
                        created_at TIMESTAMP DEFAULT NOW(),
                        updated_at TIMESTAMP DEFAULT NOW()
 );
@@ -37,4 +37,3 @@ CREATE TABLE Comments (
                           created_at TIMESTAMP DEFAULT NOW(),
                           updated_at TIMESTAMP DEFAULT NOW()
 );
-SELECT * FROM users WHERE email =  'admin@braindata.com' AND password = 'braindata' AND role = 0 LIMIT 1
