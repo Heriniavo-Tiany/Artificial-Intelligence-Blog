@@ -3,7 +3,7 @@ var router = express.Router();
 const slugify = require('slugify');
 
 router.get('/', function(req, res, next) {
-  const query = 'SELECT * FROM articles ORDER BY created_at DESC';
+  const query = 'SELECT * FROM articles';
 
   req.db.query(query, (err, result) => {
     if (err) {
