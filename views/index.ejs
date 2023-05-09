@@ -5,8 +5,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
-                    <%
-                    for (let article of articles) { %>
+                    <% for (let article of articles) { %>
                         <div class="col-lg-3 col-md-6">
                             <article class="post-grid mb-5">
                                 <a class="post-thumb mb-4 d-block" href="/blogs/<%= article.id %>/<%= article.slug %>">
@@ -26,11 +25,25 @@
             <div class="m-auto">
                 <div class="pagination mt-5 pt-4">
                     <ul class="list-inline ">
-                        <li class="list-inline-item"><a href="#" class="active">1</a></li>
-                        <li class="list-inline-item"><a href="#">2</a></li>
-                        <li class="list-inline-item"><a href="#">3</a></li>
-                        <li class="list-inline-item"><a href="#" class="prev-posts"><i class="ti-arrow-right"></i></a>
-                        </li>
+                        <% if (currentPage === 1) { %>
+                            <li class="list-inline-item disabled"><a href="#" tabindex="-1"><i class="ti-arrow-left"></i></a></li>
+                        <% } else { %>
+                            <li class="list-inline-item"><a href="/?page=<%= currentPage - 1 %>"><i class="ti-arrow-left"></i></a></li>
+                        <% } %>
+
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <% if (i === currentPage) { %>
+                                <li class="list-inline-item active"><a href="#" tabindex="-1"><%= i %></a></li>
+                            <% } else { %>
+                                <li class="list-inline-item"><a href="/?page=<%= i %>"><%= i %></a></li>
+                            <% } %>
+                        <% } %>
+
+                        <% if (currentPage === totalPages) { %>
+                            <li class="list-inline-item disabled"><a href="#" tabindex="-1"><i class="ti-arrow-right"></i></a></li>
+                        <% } else { %>
+                            <li class="list-inline-item"><a href="/?page=<%= currentPage + 1 %>"><i class="ti-arrow-right"></i></a></li>
+                        <% } %>
                     </ul>
                 </div>
             </div>

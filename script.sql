@@ -53,5 +53,3 @@ values (1, 'News', 'News');
 
 
 
-
-select * from articles;
