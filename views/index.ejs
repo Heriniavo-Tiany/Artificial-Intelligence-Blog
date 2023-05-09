@@ -25,27 +25,18 @@
             <div class="m-auto">
                 <div class="pagination mt-5 pt-4">
                     <ul class="list-inline ">
-                        <% if (currentPage === 1) { %>
-                            <li class="list-inline-item disabled"><a href="#" tabindex="-1"><i class="ti-arrow-left"></i></a></li>
-                        <% } else { %>
-                            <li class="list-inline-item"><a href="/?page=<%= currentPage - 1 %>"><i class="ti-arrow-left"></i></a></li>
+                        <% if (currentPage > 1) { %>
+                            <li class="list-inline-item"><a href="?page=<%= currentPage - 1 %>" class="prev-posts"><i class="ti-arrow-left"></i></a></li>
                         <% } %>
-
-                        <% for (let i = 1; i <= totalPages; i++) { %>
-                            <% if (i === currentPage) { %>
-                                <li class="list-inline-item active"><a href="#" tabindex="-1"><%= i %></a></li>
-                            <% } else { %>
-                                <li class="list-inline-item"><a href="/?page=<%= i %>"><%= i %></a></li>
-                            <% } %>
+                        <% if (articles.length === pageSize) { %>
+                            <li class="list-inline-item"><a href="?page=<%= currentPage + 1 %>" class="active"><%= currentPage + 1 %></a></li>
                         <% } %>
-
-                        <% if (currentPage === totalPages) { %>
-                            <li class="list-inline-item disabled"><a href="#" tabindex="-1"><i class="ti-arrow-right"></i></a></li>
-                        <% } else { %>
-                            <li class="list-inline-item"><a href="/?page=<%= currentPage + 1 %>"><i class="ti-arrow-right"></i></a></li>
+                        <% if (currentPage < totalPages) { %>
+                            <li class="list-inline-item"><a href="?page=<%= currentPage + 1 %>" class="prev-posts"><i class="ti-arrow-right"></i></a></li>
                         <% } %>
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
