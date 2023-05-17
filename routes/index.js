@@ -21,7 +21,6 @@ router.get('/', function(req, res, next) {
 
     const hasMore = articles.length === pageSize;
     const totalPages = hasMore ? currentPage + 1 : currentPage;
-
     res.render('index', {
       title: 'Accueil - Brain Data',
       articles,
